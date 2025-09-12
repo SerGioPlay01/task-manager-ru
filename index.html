@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0" />
+
+	<!-- Метатеги для SEO -->
+	<title>Диспетчер задач - управляйте своими задачами стильно и эффективно</title>
+	<meta name="description"
+		content="Управляйте своими задачами с легкостью. Отслеживайте выполненные и текущие задачи, добавляйте новые и повышайте продуктивность.">
+	<meta name="keywords"
+		content="диспетчер задач, управление задачами, повышение продуктивности, список задач, выполненные задачи, задачи в процессе">
+
+	<!-- Метатеги для Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Диспетчер задач - управляйте своими задачами стильно">
+	<meta name="twitter:description"
+		content="Управляйте своими задачами с легкостью. Отслеживайте выполненные и текущие задачи, добавляйте новые и повышайте продуктивность.">
+	<meta name="twitter:image" content="/preview.jpg">
+	<meta name="twitter:image:width" content="500">
+	<meta name="twitter:image:height" content="200">
+
+	<!-- Метатеги Open Graph (Facebook, LinkedIn) -->
+	<meta property="og:title" content="Диспетчер задач - Управляйте своими задачами стильно">
+	<meta property="og:description"
+		content="Управляйте своими задачами с легкостью. Отслеживайте выполненные и текущие задачи, добавляйте новые и повышайте продуктивность.">
+	<meta property="og:image" content="/preview.jpg">
+	<meta property="og:image:width" content="500">
+	<meta property="og:image:height" content="200">
+	<meta property="og:url" content="/">
+
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+	<noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet"></noscript>
+	<link rel="stylesheet" href="/style.css">
+
+
+	<link rel="manifest" href="/manifest.json">
+	<link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="/favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#24eb66">
+	<meta name="theme-color" content="#24eb66" media="(prefers-color-scheme: light)">
+	<meta name="theme-color" content="#02534b" media="(prefers-color-scheme: dark)">
+	
+	<!-- iOS specific meta tags -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="apple-mobile-web-app-title" content="Диспетчер задач">
+	
+	<!-- Android specific meta tags -->
+	<meta name="mobile-web-app-capable" content="yes">
+	
+	<!-- Windows specific meta tags -->
+	<meta name="msapplication-navbutton-color" content="#24eb66">
+	<meta name="msapplication-starturl" content="/">
+	
+	<!-- Preload critical resources -->
+	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" as="style">
+	<link rel="preload" href="/style.css" as="style">
+	<link rel="preload" href="/app.js" as="script">
+
+</head>
+
+<body>
+	<button class="theme-toggle" id="themeToggle" aria-label="Переключить тему" title="Переключить между светлой и темной темой">🌙</button>
+	<button class="help-toggle" id="helpToggle" aria-label="Показать справку" title="Открыть руководство пользователя">❓</button>
+
+	<!-- Help modal -->
+	<div class="modal" id="helpModal">
+		<div class="modal__content help-modal__content">
+			<button class="modal__close" onclick="closeHelpModal()">&times;</button>
+			<div class="help-header">
+				<div class="help-icon">📘</div>
+				<h2>Инструкция пользователя</h2>
+			</div>
+			<p class="help-intro">Добро пожаловать в Диспетчер задач! Это руководство поможет вам извлечь максимум
+				пользы из этого приложения.</p>
+
+			<div class="help-content">
+				<section class="help-section">
+					<div class="help-section-header">
+						<div class="help-section-icon">🎯</div>
+						<h3>Начало работы</h3>
+					</div>
+					<div class="help-section-content">
+						<p>Диспетчер задач поможет вам организовать работу с помощью простой доски канбан:</p>
+						<ul>
+							<li><strong>Список дел</strong> - задачи, к которым вы еще не приступали</li>
+							<li><strong>В процессе</strong> - задачи, над которыми вы сейчас работаете</li>
+							<li><strong>Выполнено</strong> - выполненные задания</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="help-section">
+					<div class="help-section-header">
+						<div class="help-section-icon">➕</div>
+						<h3>Создание задач</h3>
+					</div>
+					<div class="help-section-content">
+						<p>Чтобы создать новую задачу:</p>
+						<ol>
+							<li>Нажмите кнопку <strong>"+ Добавить задачу"</strong> в любом столбце</li>
+							<li>Заполните детали задачи (название обязательно)</li>
+							<li>Настройте задачу, указав срок выполнения, цвет и изображение</li>
+							<li>Нажмите <strong>"Добавить задачу"</strong>, чтобы сохранить</li>
+						</ol>
+					</div>
+				</section>
+
+				<section class="help-section">
+					<div class="help-section-header">
+						<div class="help-section-icon">🔄</div>
+						<h3>Управление задачами</h3>
+					</div>
+					<div class="help-section-content">
+						<p>Вы можете легко управлять своими задачами с помощью следующих действий:</p>
+						<ul>
+							<li><strong>Перемещение</strong> - перетаскивайте задачи между столбцами, чтобы обновить их
+								статус</li>
+							<li><strong>Редактирование</strong> - нажмите на значок ✏️, чтобы изменить детали задачи
+							</li>
+							<li><strong>Удаление</strong> - нажмите на значок 🗑️, чтобы удалить задачу (требуется
+								подтверждение)</li>
+						</ul>
+					</div>
+				</section>
+
+				<section class="help-section">
+					<div class="help-section-header">
+						<div class="help-section-icon">💡</div>
+						<h3>Профессиональные советы</h3>
+					</div>
+					<div class="help-section-content">
+						<ul>
+							<li><strong>Локальное хранилище</strong> - ваши задачи автоматически сохраняются в вашем
+								браузере</li>
+							<li><strong>Темный режим</strong> - переключайтесь между светлой и темной темами с помощью
+								кнопки 🌙/☀️</li>
+							<li><strong>Статистика задач</strong> - следите за своим прогрессом с помощью счетчиков в
+								верхней части страницы</li>
+							<li><strong>Цвета задач</strong> - используйте цвета для категоризации или приоритизации
+								задач</li>
+							<li><strong>Изображения</strong> - добавляйте изображения к задачам, которые требуют
+								визуального контекста</li>
+						</ul>
+					</div>
+				</section>
+
+				<div class="help-footer">
+					<button class="btn help-close-btn" onclick="closeHelpModal()">Понятно!</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<header class="header">
+		<div class="header__content">
+			<h1 class="header__title">Диспетчер задач</h1>
+			<p class="header__subtitle">Стильно управляйте своими задачами</p>
+			
+			<!-- Quick Actions Bar -->
+			<div class="quick-actions">
+				<div class="search-container">
+					<input type="text" id="searchInput" placeholder="🔍 Поиск задач... (Ctrl+F)" class="search-input">
+					<button id="clearSearch" class="clear-search">✕</button>
+				</div>
+				<div class="quick-buttons">
+					<button class="quick-btn" id="quickAddBtn" title="Быстрое добавление (Ctrl+N)">➕ Быстро добавить</button>
+					<!-- <button class="quick-btn" id="bulkActionsBtn" title="Массовые действия">📋 Действия</button> -->
+					<button class="quick-btn" id="exportBtn" title="Экспорт данных">💾 Экспорт</button>
+					<button class="quick-btn" id="importBtn" title="Импорт данных">📂 Импорт</button>
+				</div>
+			</div>
+
+			<div class="header__stats">
+				<div class="header__stat">
+					<div class="header__stat-value" id="totalTasks">0</div>
+					<div class="header__stat-label">Всего задач</div>
+				</div>
+				<div class="header__stat">
+					<div class="header__stat-value" id="completedTasks">0</div>
+					<div class="header__stat-label">Выполнено</div>
+				</div>
+				<div class="header__stat">
+					<div class="header__stat-value" id="inProgressTasks">0</div>
+					<div class="header__stat-label">В процессе</div>
+				</div>
+				<div class="header__stat">
+					<div class="header__stat-value" id="overdueTasksCount">0</div>
+					<div class="header__stat-label">Просрочено</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="container">
+		<div class="board" role="main" aria-label="Канбан доска с задачами">
+			<div class="column" id="todo" role="region" aria-labelledby="todo-title">
+				<div class="column__header">
+					<h2 class="column__title" id="todo-title">📝 Список задач</h2>
+					<span class="column__count" aria-label="Количество задач в списке">0</span>
+				</div>
+				<div class="task-list" role="list" aria-label="Задачи в списке дел">
+					<button class="add-task" role="button" aria-label="Добавить новую задачу в список дел">+ Добавить задачу</button>
+				</div>
+			</div>
+
+			<div class="column" id="progress" role="region" aria-labelledby="progress-title">
+				<div class="column__header">
+					<h2 class="column__title" id="progress-title">🔄 В процессе</h2>
+					<span class="column__count" aria-label="Количество задач в процессе">0</span>
+				</div>
+				<div class="task-list" role="list" aria-label="Задачи в процессе выполнения">
+					<button class="add-task" role="button" aria-label="Добавить новую задачу в процесс">+ Добавить задачу</button>
+				</div>
+			</div>
+
+			<div class="column" id="done" role="region" aria-labelledby="done-title">
+				<div class="column__header">
+					<h2 class="column__title" id="done-title">✅ Выполненные задачи</h2>
+					<span class="column__count" aria-label="Количество выполненных задач">0</span>
+				</div>
+				<div class="task-list" role="list" aria-label="Выполненные задачи">
+					<button class="add-task" role="button" aria-label="Добавить новую задачу в выполненные">+ Добавить задачу</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<div class="social-links">
+			<a href="https://sergioplay-dev.vercel.app/" class="social-link" target="_blank" rel="noopener">
+				<span>👨‍💻</span> Сайт разработчика
+			</a>
+		</div>
+	</footer>
+
+	<!-- Modal for adding/editing a task -->
+	<div class="modal" id="taskModal">
+		<div class="modal__content">
+			<button class="modal__close" onclick="closeModal()">&times;</button>
+			<h2>New Task</h2>
+			<form class="task-form" id="taskForm">
+				<input type="hidden" id="editTaskId">
+				<input type="hidden" id="columnType">
+				<div class="form-group">
+					<label for="taskTitle">Название</label>
+					<input type="text" id="taskTitle" required>
+				</div>
+				<div class="form-group">
+					<label for="taskDescription">Описание</label>
+					<textarea id="taskDescription" rows="3"></textarea>
+				</div>
+				<div class="form-group">
+					<label for="taskDeadline">Дедлайн</label>
+					<input type="datetime-local" id="taskDeadline">
+				</div>
+				<div class="form-group">
+					<label>Цвет задачи</label>
+					<div class="color-picker">
+						<input type="color" id="taskColor" value="#3a86ff">
+						<span>Выберите цвет для вашей задачи</span>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="taskImage">Изображение</label>
+					<input type="file" id="taskImage" accept="image/*">
+				</div>
+				<button type="submit" class="btn">Добавить задачу</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- Confirmation modal -->
+	<div class="modal" id="confirmationModal">
+		<div class="modal__content">
+			<div class="confirmation-check">✅</div>
+			<h3>Успех!</h3>
+			<p id="confirmationMessage"></p>
+		</div>
+	</div>
+
+	<!-- Delete confirmation modal -->
+	<div class="modal" id="deleteConfirmationModal">
+		<div class="modal__content">
+			<h3>Подтвердите удаление</h3>
+			<p>Вы уверены, что хотите удалить эту задачу?</p>
+			<div style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.5rem;">
+				<button class="btn" id="cancelDeleteBtn">Отмена</button>
+				<button class="btn" style="background: var(--accent)" id="confirmDeleteBtn">Удалить</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bulk Actions Modal -->
+	<div class="modal" id="bulkActionsModal">
+		<div class="modal__content">
+			<button class="modal__close" onclick="closeBulkModal()">&times;</button>
+			<h2>Массовые действия</h2>
+			<div class="bulk-actions-content">
+				<div class="bulk-selection">
+					<label>
+						<input type="checkbox" id="selectAllTasks"> Выбрать все задачи
+					</label>
+				</div>
+				<div class="bulk-buttons">
+					<button class="btn" id="bulkMoveBtn">Переместить выбранные</button>
+					<button class="btn" id="bulkDeleteBtn" style="background: var(--accent)">Удалить выбранные</button>
+					<button class="btn" id="bulkCompleteBtn">Отметить как выполненные</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Quick Add Modal -->
+	<div class="modal" id="quickAddModal">
+		<div class="modal__content">
+			<button class="modal__close" onclick="closeQuickAddModal()">&times;</button>
+			<h2>Быстрое добавление задач</h2>
+			<div class="quick-add-content">
+				<textarea id="bulkTaskInput" placeholder="Введите задачи, каждая с новой строки:&#10;- Купить молоко&#10;- Позвонить врачу&#10;- Закончить проект" rows="8"></textarea>
+				<div class="quick-add-options">
+					<select id="bulkTaskColumn">
+						<option value="todo">📝 Список задач</option>
+						<option value="progress">🔄 В процессе</option>
+						<option value="done">✅ Выполненные</option>
+					</select>
+					<input type="color" id="bulkTaskColor" value="#3a86ff" title="Цвет для всех задач">
+				</div>
+				<button class="btn" id="addBulkTasksBtn">Добавить все задачи</button>
+			</div>
+		</div>
+	</div>
+
+	<!-- Import Modal -->
+	<div class="modal" id="importModal">
+		<div class="modal__content">
+			<button class="modal__close" onclick="closeImportModal()">&times;</button>
+			<h2>Импорт задач</h2>
+			<div class="import-content">
+				<input type="file" id="importFile" accept=".json" style="margin-bottom: 1rem;">
+				<p>Или вставьте JSON данные:</p>
+				<textarea id="importData" placeholder='[{"title": "Задача 1", "description": "Описание", "column": "todo"}]' rows="8"></textarea>
+				<button class="btn" id="importDataBtn">Импортировать</button>
+			</div>
+		</div>
+	</div>
+
+	<script src="/performance.js"></script>
+	<script src="/app.js"></script>
+	
+	<!-- Service Worker Registration -->
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', function() {
+				navigator.serviceWorker.register('/sw.js')
+					.then(function(registration) {
+						console.log('ServiceWorker registration successful');
+					})
+					.catch(function(err) {
+						console.log('ServiceWorker registration failed: ', err);
+					});
+			});
+		}
+	</script>
+</body>
+
+</html>
