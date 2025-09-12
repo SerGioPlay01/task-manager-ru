@@ -1,4 +1,6 @@
-# Диспетчер задач - Улучшенная версия
+![](https://raw.githubusercontent.com/SerGioPlay01/task-manager-ru/refs/heads/main/ghgcgfc.png)
+
+# Диспетчер задач
 
 Современный диспетчер задач с канбан-доской, оптимизированный для всех устройств и экранов.
 
